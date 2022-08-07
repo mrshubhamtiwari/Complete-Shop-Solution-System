@@ -21,7 +21,6 @@
   },
   "dependencies": {
     "electron-squirrel-startup": "^1.0.0",
-    "firebase": "^8.6.5",
     "mysql": "^2.18.1",
     "nodemon": "^2.0.19",
     "sqlite": "^4.0.23",
