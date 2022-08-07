@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <link rel="stylesheet" href="../bootstrap/css/bootstrapcdn.css" />
+    <link rel="stylesheet" href="../style.css" />
+    <title>Dashboard</title>
+  </head>
+  <body>
+    <ul class="nav justify-content-end">
+      <div class="dropdown">
+        <button
+          type="button"
+          id="dropdownbtn"
+          class="text-left btn"
+          style="min-width: 160px; color: white; background-color: inherit"
+        >
+          <span class="dcontent"></span>
+          <span class="dropdown-toggle float-right"></span>
+        </button>
+        <div class="dropdown-menu dropdown-menu-right" id="myDDN">
+          <button class="btn dropdown-item">
+            <img src="../Resources/icons/setting.png" style="max-width: 20px" />
+            Settings
+          </button>
+          <div class="dropdown-divider"></div>
+          <button class="btn dropdown-item">
+            <img src="../Resources/icons/theme.png" style="max-width: 20px" />
+            Dark Theme
+          </button>
+          <div class="dropdown-divider btn-dark"></div>
+          <button class="btn dropdown-item" id="logout">
+            <img src="../Resources/icons/logout.png" style="max-width: 20px" />
+            Logout
+          </button>
+        </div>
+      </div>
+    </ul>
+
+    <div class="container d-flex justify-content-center p-5">
+      <div class="input-group">
+        <div
+          class="input-group-append"
+          style="border: none; border-radius: 100%"
+        >
+          <span class="input-group-text" style="background-color: white">
+            <img src="../Resources/icons/search.png" alt="" class="img-fluid" />
+          </span>
+        </div>
+        <input
+          type="search"
+          placeholder="Search Services"
+          class="form-control"
+          name="search"
+          id="search"
+        />
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="d-flex justify-content-center flex-wrap text-center">
+        <div
+          class="card mb-3 cardonhome"
+          style="max-width: 18rem"
+          id="billGenerate"
+        >
+          <div class="card-img-top text-center">
+            <img
+              src="../Resources/icons/bill2.png"
+              alt="Bill Generate"
+              class="home-glyph"
+            />
+            <span
+              class="box-text position-absolute"
+              style="margin-left: -7rem; visibility: hidden"
+              >Invoice Bill Generate</span
+            >
+          </div>
+        </div>
+
+        <div class="card mb-3 cardonhome" id="AddItem">
+          <div class="card-img-top text-center" style="">
+            <img
+              src="../Resources/icons/services2.png"
+              alt="Services"
+              class="home-glyph"
+            />
+            <span
+              class="box-text position-absolute"
+              style="margin-left: -7rem; visibility: hidden"
+              >Services Price List</span
+            >
+          </div>
+        </div>
+
+        <div class="card mb-3 cardonhome" id="Summary">
+          <div class="card-img-top text-center" style="">
+            <img
+              src="../Resources/icons/sales.png"
+              alt="Summary"
+              class="home-glyph"
+            />
+            <span
+              class="box-text position-absolute"
+              style="margin-left: -7rem; visibility: hidden"
+              >Summary Sales</span
+            >
+          </div>
+        </div>
+
+        <section
+          class="position-absolute"
+          style="bottom: 6rem; font-size: 30px"
+          id="serviceText"
+        >
+          -
+        </section>
+      </div>
+      <div class="row">
+        <div class="col-12 footer text-center p-4 fixed-bottom">
+          &copy; All Right Reserved, Developed by Shubham Tiwari
+        </div>
+      </div>
+    </div>
+    <script src="../bootstrap/js/jquery3.6.js"></script>
+    <script src="../bootstrap/jQuery.js"></script>
+    <script type="text/javascript" src="../bootstrap/js/popper.js"></script>
+    <script type="text/javascript" src="../bootstrap/js/homepage.js"></script>
+  </body>
+</html>

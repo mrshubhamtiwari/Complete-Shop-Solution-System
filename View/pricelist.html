@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrapcdn.css">
+    <title>Price List</title>
+</head>
+<body>
+
+<div class="alert alert-info header fixed-bottom position-absolute" role="alert">
+    <span id="success-msg">Record Added</span>
+</div>
+<div class="jumbotro p-5 text-center mb-5" style="background-image: radial-gradient( circle farthest-corner at 24.1% 68.8%,  rgba(50,50,50,1) 0%, rgba(0,0,0,1) 99.4% );">
+    <h1 style="font-family:'Microsoft Sans Serif'; color:white;">Product & Services List</h1>
+    <div class="controls">
+<!--        <button id="backbtn" class="btn btn-dark float-left"><img src="../Resources/icons/back.png"></button>-->
+        <button class="btn float-right" id="homebtnp" style="background-color: inherit;"><img src=""><img src="../Resources/icons/home.png"></button>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-2 col-xl-2">
+        <div class="d-flex flex-wrap">
+    <div class="card w-100 mb-3">
+        <div class="card-header">
+            Enter Service Details
+        </div>
+        <div class="card-body">
+            <input type="text" class="form-control m-2" id="service" placeholder="Name of Service" required>
+            <input type="number" placeholder="Price" id="price" class="form-control m-2" required>
+            <button class="w-100 btn btn-info m-2" id="add" type="submit">Add</button>
+        </div>
+    </div>
+
+    <div class="card w-100 mb-3">
+        <div class="card-header">
+            Search Services
+        </div>
+        <div class="card-body">
+            <input type="search" class="form-control m-2" id="searchServices" placeholder="Name of Service" required>
+        </div>
+    </div>
+
+    <div class="card w-100 mb-3">
+        <div class="card-header">
+            Stats
+        </div>
+        <div class="card-body">
+            Active Services
+            <h2 id="stats"></h2>
+
+        </div>
+    </div>
+
+
+    </div>
+    </div>
+
+    <div class="col-sm-12 col-md-12 col-lg-10 col-xl-10">
+    <div class="table-responsive" style="max-height: 600px;">
+    <table class="table">
+        <thead class="thead-dark">
+<!--            <th>S.No</th>-->
+            <th>Service Code</th>
+            <th>Name</th>
+            <th>Rate</th>
+            <th>Action</th>
+        </thead>
+        <tbody style="font-weight:normal;">
+        </tbody>
+    </table>  
+    </div>
+    </div>
+    </div>
+    </div>
+<script src="../bootstrap/js/jquery3.6.js"></script>
+<script src="../bootstrap/jQuery.js"></script>
+<script type="text/javascript" src="../bootstrap/js/popper.js"></script>
+<script src="../bootstrap/js/pricelist.js"></script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+.img-fluid{
+    max-width: 30px;
+    max-height: 30px;
+}
+#loginForm{
+    margin: 10% auto;
+    width: 80%;
+}
+.footer{
+    background-color: #263238;
+    color:white;
+}
+.nav,.nav li,.nav{
+    padding: 10px;
+    background-color: #263238;
+    color:white;
+    font-size: 20px;
+}
+.cardonhome{
+    cursor:pointer;
+    margin:10px 30px;
+    border-radius: 100%;
+}
+
+#invoice-page{
+
+}
+.card-img-top{
+    border-radius: 100%;
+    padding: 15px;
+    transition: background-color ease-in-out 0.5s;
+}
+.card-img-top:hover{
+    background-color: lightsalmon;
+    border-radius: 100%;
+    border:1px solid lightsalmon;
+
+}
+
+.card-img-top img{
+    max-width: 123px;
+    padding: 30px;
+    transition: transform 0.5s;
+}
+
+.card-img-top img:hover{
+    transform: scale(1.1);
+}
+.card-footer{
+    font-family: "Microsoft Sans Serif";
+}
+thead th{
+    position: sticky;
+    top:0;
+}
+
+.btn img{
+
+    transition: transform 0.4s;
+}
+.btn img:hover{
+    transform: scale(1.2);
+}
+tbody tr{
+    transition: transform 0.2s;
+}
+tbody tr:hover{
+    cursor:pointer;
+    transform: translate(1.1%);
+}
+#serviceText{
+    transition: transform 0.5s;
+}
+#serviceText:hover{
+    transform: scale(1.2);
+}

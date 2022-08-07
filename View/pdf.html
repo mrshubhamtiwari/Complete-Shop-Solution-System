@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Bill</title>
+    <link rel="stylesheet" href="../bootstrap/css/bootstrapcdn.css" />
+    <style>
+      * {
+        font-family: "Times New Roman";
+        font-size: 16px;
+      }
+      .address td {
+        border: none;
+        padding: 0.5px;
+        font-weight: bold;
+      }
+      .theadd th {
+        font-weight: bold;
+        padding: 5px 5px;
+      }
+      .user-head td {
+        border: none;
+        padding: 0px 12px;
+
+        font-weight: bold;
+      }
+      .top-bill td {
+        font-weight: bold;
+        border: none;
+        padding: 0px;
+      }
+      .footer td {
+        border: 1px solid;
+        font-weight: bold;
+        padding: 5px 5px;
+        font-size: 15px;
+        text-align: center;
+      }
+
+      .total td {
+        padding: 5px;
+        font-weight: bold;
+        font-size: 20px;
+      }
+      .btn img {
+        transition: transform 0.4s;
+      }
+      .btn img:hover {
+        transform: scale(1.1);
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      class="container"
+      style="border: 1px solid; border-bottom: 2px dotted; padding-top: 20px"
+    >
+      <table style="" class="table">
+        <tr rowspan="2" class="top-bill">
+          <td colspan="5" rowspan="2">
+            <img
+              src="../Resources/posters/postertrans.png"
+              class="position-absolute"
+              style="max-width: 150px"
+            />
+          </td>
+          <td>Date</td>
+          <td class="setDate"></td>
+        </tr>
+        <tr rowspan="2" class="top-bill">
+          <td>Invoice No. #</td>
+          <td class="setInvId"></td>
+        </tr>
+        <tr>
+          <td colspan="7" class="" style="border: none">&#9;</td>
+        </tr>
+        <tr class="address">
+          <td colspan="7" style="font-size: 28px">
+            CSC | Sahaj | Jan Seva Kendra
+          </td>
+        </tr>
+        <tr class="address">
+          <td colspan="7">Harisanker Karta, Opp. Jaunpur Petrol Pump</td>
+        </tr>
+        <tr class="address">
+          <td colspan="7">Ashapur Bazar, Gazipur Road (NH-29)</td>
+        </tr>
+        <tr class="address">
+          <td colspan="7">Varanasi-221007, Uttar Pradesh, India</td>
+        </tr>
+        <tr class="address">
+          <td colspan="7">
+            <img
+              src="../Resources/icons/tele.png"
+              style="max-width: 35px"
+            />&nbsp; 0542-2090345
+          </td>
+        </tr>
+        <tr class="address">
+          <td colspan="7">
+            <img src="../Resources/icons/call.png" style="max-width: 35px" />
+            (+91)-9450886691
+          </td>
+        </tr>
+        <tr class="address">
+          <td colspan="7">
+            <img src="../Resources/icons/wtsapp.png" style="max-width: 35px" />
+            (+91)-9151489091
+          </td>
+        </tr>
+        <tr class="address">
+          <td colspan="7">
+            <img src="../Resources/icons/gmail.png" style="max-width: 30px" />
+            &nbsp;cscvlecentre@gmail.com
+          </td>
+        </tr>
+        <tr class="p-0">
+          <td colspan="7" style="border: none" class="p-1"></td>
+        </tr>
+        <tr>
+          <td
+            colspan="7"
+            class="text-center p-0"
+            style="
+              font-size: 20px;
+              font-weight: bold;
+              font-family: 'Times New Roman';
+              padding: 5px 15px;
+            "
+          >
+            Invoice
+          </td>
+        </tr>
+
+        <tr>
+          <td
+            colspan="1"
+            style="
+              font-size: 18px;
+              font-weight: bold;
+              font-family: 'Times New Roman';
+              padding: 0px 11px;
+            "
+          >
+            Bill To
+          </td>
+          <td colspan="6"></td>
+        </tr>
+
+        <tr class="user-head">
+          <td colspan="1" class="">
+            Name &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; :
+          </td>
+          <td colspan="2" id="billToName" style="font-weight: normal"></td>
+          <td colspan="4"></td>
+        </tr>
+        <tr class="user-head">
+          <td colspan="1" class="">
+            Mobile &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; :
+          </td>
+          <td colspan="2" id="billToMobile" style="font-weight: normal"></td>
+          <td colspan="4"></td>
+        </tr>
+        <tr class="user-head">
+          <td colspan="1" class="">
+            Address &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; :
+          </td>
+          <td colspan="2" id="billToAddress" style="font-weight: normal"></td>
+          <td colspan="4"></td>
+        </tr>
+        <tr class="p-0">
+          <td colspan="7" style="border: none" class="p-1"></td>
+        </tr>
+        <tr class="theadd" style="background-color: lightgray">
+          <th>S.No</th>
+          <th colspan="3">Description</th>
+          <th>Rate</th>
+          <th>Quantity</th>
+          <th>Amount</th>
+        </tr>
+
+        <tr class="total border-bottom">
+          <td colspan="5"></td>
+          <td colspan="">Total</td>
+          <td colspan="1" id="totalSum"></td>
+        </tr>
+        <tr>
+          <td
+            colspan="7"
+            class="text-center font-weight-bold p-1"
+            style="border: none"
+          >
+            अन्य सेवाए / सुविधाए
+          </td>
+        </tr>
+
+        <tr class="footer">
+          <td>आय / जाति / निवास</td>
+          <td>EWS प्रमाण-पत्र</td>
+
+          <td>पैन कार्ड</td>
+          <td>टाइपिंग</td>
+          <td>खसरा / खतौनी</td>
+
+          <td>प्रिंटिंग</td>
+          <td>टिकट बुकिंग</td>
+        </tr>
+        <tr class="footer">
+          <td>जन्म / मृत्यु प्रमाण-पत्र</td>
+          <td>हैसियत प्रमाण-पत्र</td>
+          <td>आधार कार्ड</td>
+          <td>पासपोर्ट आवेदन</td>
+          <td>आयुष्मान कार्ड</td>
+          <td>स्कैनिंग</td>
+          <td>ITR फाईलिंग</td>
+        </tr>
+        <tr class="footer">
+          <td>विकलांग प्रमाण-पत्र</td>
+          <td>ड्राइविंग लाइसेंस</td>
+
+          <td>वोटर कार्ड</td>
+          <td>जमा / निकासी</td>
+          <td>मनी ट्रान्सफर</td>
+          <td>UID कार्ड</td>
+          <td>पासपोर्ट फोटो</td>
+        </tr>
+        <tr class="footer">
+          <td>वृद्धा / विधवा / विकलांग पेंशन</td>
+          <td>मोबाइल / टीवी रिचार्ज</td>
+          <td>राशन कार्ड</td>
+          <td>ऑनलाइन फॉर्म</td>
+          <td>लैमीनेशन</td>
+          <td>फोटोकॉपी</td>
+
+          <td>RTE आवेदन</td>
+        </tr>
+        <tr class="footer">
+          <td colspan="7">यहाँ हर प्रकार का सॉफ्टवेर बनाया जाता है |</td>
+        </tr>
+        <tr>
+          <td colspan="7"></td>
+        </tr>
+        <tr>
+          <td
+            colspan="7"
+            class="text-center p-0 border-bottom pt-2"
+            style="
+              font-size: 20px;
+              font-weight: bold;
+              font-family: 'Times New Roman';
+              padding: 5px 15px;
+            "
+          >
+            Service Copy
+          </td>
+        </tr>
+
+        <tr class="user-head">
+          <td colspan="1" class="">
+            Name &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; :
+          </td>
+          <td colspan="2" id="billToName" style="font-weight: normal"></td>
+          <td colspan="2"></td>
+          <td>Date</td>
+          <td class="setDate"></td>
+        </tr>
+        <tr class="user-head">
+          <td colspan="1" class="">
+            Mobile &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; :
+          </td>
+          <td colspan="2" id="billToMobile" style="font-weight: normal"></td>
+          <td colspan="2"></td>
+          <td>Invoice No. #</td>
+          <td class="setInvId"></td>
+        </tr>
+        <tr class="user-head">
+          <td colspan="1" class="">
+            Address &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; :
+          </td>
+          <td colspan="2" id="billToAddress" style="font-weight: normal"></td>
+          <td colspan="4"></td>
+        </tr>
+        <tr class="p-0">
+          <td colspan="7" style="border: none" class="p-1"></td>
+        </tr>
+        <tr class="theadd" style="background-color: lightgray">
+          <th>S.No</th>
+          <th colspan="3">Description</th>
+          <th>Rate</th>
+          <th>Quantity</th>
+          <th>Amount</th>
+        </tr>
+
+        <tr class="total border-bottom">
+          <td colspan="5"></td>
+          <td colspan="">Total</td>
+          <td colspan="1" id="totalSum"></td>
+        </tr>
+
+        <tr id="billfooter">
+          <td colspan="7" class="text-center">
+            <div class="btn-group">
+              <button class="btn" id="pdftohome">
+                <img
+                  src="../Resources/icons/home1.png"
+                  style="max-width: 18px"
+                />
+              </button>
+              <button class="btn" id="pdfC">
+                <img
+                  src="../Resources/icons/print.png"
+                  style="max-width: 18px"
+                />
+              </button>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <script src="../bootstrap/js/jquery3.6.js"></script>
+    <script src="../bootstrap/jQuery.js"></script>
+    <script type="text/javascript" src="../bootstrap/js/popper.js"></script>
+    <script src="../bootstrap/js/pdfjs.js"></script>
+  </body>
+</html>

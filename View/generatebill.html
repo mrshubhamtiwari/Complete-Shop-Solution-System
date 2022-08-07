@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrapcdn.css">
+    <title>Invoice Generate</title>
+</head>
+<body>
+
+<div class="jumbotro p-5 text-center mb-5" style="background-image: radial-gradient( circle farthest-corner at 24.1% 68.8%,  rgba(50,50,50,1) 0%, rgba(0,0,0,1) 99.4% );">
+    <h1 style="font-family:'Microsoft Sans Serif'; color:white;">Generate Invoice</h1>
+    <div class="controls">
+
+<!--            <button id="backbtn" class="btn btn-dark float-left"><img src="../Resources/icons/back.png"></button>-->
+            <button style="background-color: inherit;" class="btn float-right" id="homebtn"><img src=""><img src="../Resources/icons/home.png"></button>
+    </div>
+</div>
+
+<div class="container" id="invoice-page">
+    <div class="row">
+        <div class="col-6">
+                <div class="form-group">
+                    <div class="input-group m-2">
+                        <div class="input-group-prepend">
+                        <span class="input-group-text" style="width:100px;">
+                            Bill To
+                        </span>
+                        </div>
+                        <input type="text" placeholder="Customer Name" name="bname" id="bname" class="form-control" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group m-2">
+                        <div class="input-group-prepend">
+                        <span class="input-group-text" style="width:100px;">
+                            Phone
+                        </span>
+                        </div>
+                        <input type="text" placeholder="Mobile No" name="mob" id="mob" pattern="(([0-9]){10})" class="form-control" required>
+                    </div>
+                    <small id="mob-error" class=""></small>
+                </div>
+                <div class="form-group">
+                    <div class="input-group m-2">
+                        <div class="input-group-prepend">
+                        <span class="input-group-text" style="width:100px;">
+                            Address
+                        </span>
+                        </div>
+                        <input type="text" placeholder="Address" name="addr" id="addr" class="form-control" required>
+                    </div>
+                </div>
+        </div>
+        <div class="col-6">
+            <div class="form-group">
+                <div class="input-group m-2">
+                    <div class="input-group-prepend">
+            <span class="input-group-text" style="width:100px;">
+                Date
+            </span>
+                    </div>
+                    <input type="text" id="dateid" value="" class="form-control w-25 float-right" readonly>
+                </div>
+            </div>
+            </form>
+        </div>
+    </div>
+
+<div class="bill-header"></div>
+<div class="row">
+    <div class="col-3" id="savediv">
+        <button class="btn btn-dark ml-2 w-100">Add Services</button>
+        <form id="myform" action="javascript:void(0);">
+            <select name="plist" class="form-control m-2" id="plist">
+                <option value="0">--NO SELECT--</option>
+            </select>
+            <input type="number" min="1" id="rate" class="form-control form-control-plaintext m-2" name="rate" value="0" readonly>
+            <input type="number" min="1" class="form-control m-2" name="quant" id="quant" value="0" readonly>
+            <input type="text" name="" id="total" class="form-control form-control-plaintext m-2" placeholder="service charge" readonly>
+            <button class="btn btn-dark ml-2 w-100" id="atm">Add</button>
+        </form>
+
+    </div>
+    <div class="col-9" id="tablediv">
+        <table class="table" id="table">
+            <thead class="thead-dark">
+            <th>Id</th>
+            <th>Name</th>
+            <th>Rate</th>
+            <th>Quantity</th>
+            <th>Total Amount</th>
+            <th>Action</th>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+<div class="">
+         <div class="input-group w-50 float-right">
+            <div class="input-group-prepend">
+                <span class="input-group-text">
+                Total
+                </span>
+            </div>
+
+            <input type="text" name="" value="0" class="form-control form-control-plaintextmb-2" id="sumtotal" style="font-size:20px" readonly>
+            <div class="input-group-append">
+                <span class="input-group-text" id="gobill" style="background-color: black; color: white; border-radius: 4px;">
+                    Generate Bill
+                </span>
+            </div>
+         </div>
+    </div>
+</div>
+<div class="footer">
+    <div class="alert alert-danger alert-dismissible fixed-bottom" id="billgenerror" role="alert">
+        <strong id="billgenerror-text">Sample</strong>
+    </div>
+</div>
+<script src="../bootstrap/jQuery.js"></script>
+<script src="../bootstrap/jQuery.js"></script>
+<script src="../bootstrap/js/popper.js"></script>
+<script src="../bootstrap/js/generatebill.js">
+// <!--Side Div Script-->
+
+</script>
+</body>
+</html>
