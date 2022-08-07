@@ -7,3 +7,5 @@ Run below command after cloning this Repository.
   npm install  --save-dev 
   
 The above command will install all the required dependencies.
+
+Refer snaps.docx for project snapshots
